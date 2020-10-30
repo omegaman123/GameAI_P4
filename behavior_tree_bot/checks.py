@@ -21,7 +21,7 @@ def is_start(state):
     return len(my_planets) < 2
 
 def fleets(state):
-    f = [fleet for fleet in state.my_fleets()]
+    f = state.my_fleets()
     if not f:
         return True
     else:

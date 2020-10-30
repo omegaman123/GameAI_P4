@@ -1,0 +1,15 @@
+Selector: High Level Ordering of Strategies
+| Sequence: Initialize Sequence
+| | Check: is_start
+| | Check: fleets
+| | Action: spread_to_closest_weak_planets
+| Sequence: Losing Plan
+| | Check: planet_control_check
+| | Action: take_weakest_planets
+| Sequence: Winning Plan
+| | Check: planet_control_check_winning
+| | Action: defend
+| | Action: spread
+| Sequence: Attacking Plan
+| | Check: strong_fleet_check
+| | Action: strong_attack
