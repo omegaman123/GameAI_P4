@@ -45,7 +45,8 @@ def setup_behavior_tree():
     less_planet_strategy = Sequence(name='Losing Plan')
     less_planets = Check(planet_control_check)
     take_weakest_planet = Action(take_weakest_planets)
-    less_planet_strategy.child_nodes = [less_planets, take_weakest_planet]
+    attack_spread = Action(spread)
+    less_planet_strategy.child_nodes = [less_planets, take_weakest_planet, attack_spread]
 
     # This strategy executes when the bot is winning.
     # It will shift into a defensive mode, reinforcing currently owned planets while still seeking to spread
@@ -53,7 +54,7 @@ def setup_behavior_tree():
     more_planets = Check(planet_control_check_winning)
     defend_planets = Action(defend)
     defense_spread = Action(spread)
-    more_planet_strategy.child_nodes = [more_planets, defend_planets, defense_spread]
+    more_planet_strategy.child_nodes = [more_planets, take_weakest_planet, defend_planets, defense_spread]
 
     root.child_nodes = [initialize_sequence, less_planet_strategy, more_planet_strategy, attack_plan]
 

@@ -6,8 +6,10 @@ Selector: High Level Ordering of Strategies
 | Sequence: Losing Plan
 | | Check: planet_control_check
 | | Action: take_weakest_planets
+| | Action: spread
 | Sequence: Winning Plan
 | | Check: planet_control_check_winning
+| | Action: take_weakest_planets
 | | Action: defend
 | | Action: spread
 | Sequence: Attacking Plan

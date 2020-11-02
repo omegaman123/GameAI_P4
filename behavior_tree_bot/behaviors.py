@@ -66,6 +66,7 @@ def spread_to_closest_weak_planets(state):
             for p in state.neutral_planets() if p.ID not in enemy_destination_planets]
 
     closest_neutral_planets = sorted(closest_neutral_planets, key=lambda x: x[1])
+    closest_neutral_planets = closest_neutral_planets[:4]
 
     for dest in closest_neutral_planets:
         issue_order(state, state.my_planets()[0].ID, dest[0].ID,

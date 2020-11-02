@@ -60,8 +60,8 @@ if __name__ == '__main__':
                  'opponent_bots/defensive_bot.py',
                  'opponent_bots/production_bot.py']
 
-    maps = [21, 13, 24, 56, 7]
-    #maps = [71, 13, 24, 56, 7]
+    #maps = [21, 56, 43, 33, 90]
+    maps = [71, 13, 24, 56, 7]
 
 
     my_bot = 'behavior_tree_bot/bt_bot.py'
